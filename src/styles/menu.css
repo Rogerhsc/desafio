@@ -1,0 +1,11 @@
+.menu{
+    background: #141414;
+    width: 25%;
+    display: inline-block;
+}
+.menuLogo{
+    width: 100%;
+}
+.menuLogo img{
+    width: 100%;
+}
