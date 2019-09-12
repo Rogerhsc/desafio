@@ -10,8 +10,6 @@ import Icon from '@material-ui/core/Icon';
 
 export default class Button extends Component {  
   render() {
-    const { image } = "../images/" + this.props.image;
-
     return (
       <div className="button">
         <Icon>add_circle</Icon>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Menu from './components/menu';
+import HomeScreen from './components/homeScreen';
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <div className="row">
           <div className="col">
             <Menu></Menu>
+          </div>
+          <div className="col">
+            <HomeScreen></HomeScreen>
           </div>
         </div>
       </div>
