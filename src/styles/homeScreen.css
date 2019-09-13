@@ -1,23 +1,29 @@
 .homeScreen{
-    background-color: rgb(39, 31, 53);
-    width: 50%;
+    width: 100%;
     padding: 5%;
+    align-content: center;
 }
-
 table {
-    width: 90%;
-    margin: 5%;
+    width: 100%;
     background-color: #2a2a2a;
+    margin-top: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.356);
 }
-th p {
+thead th {
+    background-color: #FFF;
     font-size: 20px;
-    color: #FFFFFF;
-    border: 1px solid black;
+    color: #000000;
+    height: 30px;
 }
 tr {
     width: 100%;
-    color: #FFFFFF;
-    
+}
+tbody tr {
+    color: #FFF;
+}
+td {
+    margin: 0%;
+    padding: 0%;
 }
 td img {
     height: 40px;

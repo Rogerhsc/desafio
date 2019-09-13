@@ -6,6 +6,7 @@
 import React, { Component } from 'react'
 import '../styles/homeScreen.css';
 import Perfil from './perfil';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class HomeScreen extends Component {
     searchUsers(loginUser) {
@@ -15,12 +16,12 @@ export default class HomeScreen extends Component {
                     users: json
                 })
             })
-        }else{
-            fetch("https://api.github.com/users/" +loginUser, { method: "GET" }).then((res) => res.json()).then((json) => {
+        } else {
+            fetch("https://api.github.com/users/" + loginUser, { method: "GET" }).then((res) => res.json()).then((json) => {
                 this.setState({
                     users: [json]
                 })
-                console.log("json :" ,json);
+                console.log("json :", json);
             }).catch((error) => {
                 console.log("error");
             });
@@ -36,53 +37,52 @@ export default class HomeScreen extends Component {
             loginUser: "",
         }
     }
-    componentDidMount(){
+
+    componentDidMount() {
         this.searchUsers();
     }
 
     render() {
-
         return (
             <div className="homeScreen">
-                <input type="text" name="user" onChange={(e) => {this.setState({ textValue: e.target.value})}}></input>
-                <button onClick={() => {this.searchUsers(this.state.textValue)}}>Search</button>
                 <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    <p>#</p>
-                                </th>
-                                <th>
-                                    <p>Perfil</p>
-                                </th>
-                                <th>
-                                    <p>Login</p>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.users.map((v, i) => {
-                                    return (
-                                        <tr className="itens" onClick={ () => this.setState({loginUser: v.login})}>
-                                            <td>
-                                                <p>{i}</p>
-                                            </td>
-                                            <td className="image">
-                                                <img src={v.avatar_url} />
-                                            </td>
-                                            <td>
-                                                <p>{v.login}</p>
-                                            </td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
-                    <Perfil loginUser={this.state.loginUser}></Perfil>
+                    <input type="text" name="user" onChange={(e) => { this.setState({ textValue: e.target.value }) }}  ></input>
+                    <button onClick={() => { this.searchUsers(this.state.textValue) }}>Search</button>
                 </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <p>#</p>
+                            </th>
+                            <th>
+                                <p>Perfil</p>
+                            </th>
+                            <th>
+                                <p>Login</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.users.map((v, i) => {
+                                return (
+                                    <tr key={i} className="itens" onClick={() => this.setState({ loginUser: v.login })}>
+                                        <td>
+                                            <p>{i}</p>
+                                        </td>
+                                        <td className="image">
+                                            <img src={v.avatar_url} />
+                                        </td>
+                                        <td>
+                                            <p>{v.login}</p>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
             </div>
         )
     }

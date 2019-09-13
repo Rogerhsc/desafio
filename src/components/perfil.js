@@ -32,8 +32,6 @@ export default class Perfil extends Component {
                     name: json.name
                 })
             }
-            
-            console.log("json :" ,json);
         }).catch((error) => {
             console.log("error");
         });
@@ -41,7 +39,6 @@ export default class Perfil extends Component {
             this.setState({
                 numSeguidores: json.length
             })
-            console.log("json :" ,json);
         }).catch((error) => {
             console.log("error");
         });
@@ -49,7 +46,6 @@ export default class Perfil extends Component {
             this.setState({
                 numSeguidos: json.length
             })
-            console.log("json :" ,json);
         }).catch((error) => {
             console.log("error");
         });
