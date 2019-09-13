@@ -10,7 +10,7 @@ export default class Perfil extends Component {
     constructor(props){
         super(props)
         this.state = {
-            loginUsuario: this.props.loginUser,
+            loginUsuario: this.props.match.params.loginUser,
             numSeguidores: 0,
             numSeguidos: 0,
             avatarImage: "",

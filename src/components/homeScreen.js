@@ -5,8 +5,7 @@
  */
 import React, { Component } from 'react'
 import '../styles/homeScreen.css';
-import Perfil from './perfil';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default class HomeScreen extends Component {
     searchUsers(loginUser) {
@@ -67,7 +66,7 @@ export default class HomeScreen extends Component {
                         {
                             this.state.users.map((v, i) => {
                                 return (
-                                    <tr key={i} className="itens" onClick={() => this.setState({ loginUser: v.login })}>
+                                    <tr key={i} className="itens" onClick={() => { <Link to="/perfil/"+v.loginUser ></Link>}}>
                                         <td>
                                             <p>{i}</p>
                                         </td>
