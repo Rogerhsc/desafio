@@ -9,6 +9,7 @@ import "./style.css";
 import "../Table/style.css";
 import Table from './../Table/index';
 import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons/';
+import { Link } from 'react-router-dom';
 export default class Perfil extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +32,6 @@ export default class Perfil extends Component {
     fetch(url, { method: "GET" })
       .then(res => res.json())
       .then(json => {
-        if (json.message != "Not Found") {
           this.setState({
             avatarImage: json.avatar_url,
             email: json.email,
@@ -40,7 +40,6 @@ export default class Perfil extends Component {
             numSeguidores: json.followers,
             numSeguidos: json.following
           });
-        }
       }).catch(error => {
         console.log("error");
       });
@@ -120,7 +119,9 @@ export default class Perfil extends Component {
             {
               this.state.repositorys.map((v, i) => {
                 return (
-                  <Table key={i} position={i} private={v.private.toString()} repoName={v.name} stars={v.stargazers_count}></Table>
+                  <Link key={i} to={`/perfil/${this.state.loginUsuario}/${v.name}`}>
+                    <Table key={i} position={i} private={v.private.toString()} repoName={v.name} stars={v.stargazers_count}></Table>
+                  </Link>
                 )
               })
             }

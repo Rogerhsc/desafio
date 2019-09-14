@@ -1,0 +1,49 @@
+.homeScreen {
+    width: 100%;
+    padding: 5%;
+    align-content: center;
+}
+input {
+    border: 0px;
+}
+input:focus {
+    outline: none;
+}
+.searchBox{
+    width: 30%;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px 0px 0px 20px;
+    padding: 5px;
+    transition: 0.4s;
+    font-size: 18px;
+    margin-right: 2px;
+}
+.searchBox:focus{
+    border-color: rgb(65, 65, 255);
+}
+.textButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    width: 10%;;
+    height: 40px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 0px 20px 20px 0px;
+    padding: 5px;
+    text-align: center;
+}
+.button p{
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.button:hover{
+    border-color: rgb(65, 65, 255);
+    background-color: rgb(65, 65, 255);
+    color: white;
+    cursor: pointer;
+}

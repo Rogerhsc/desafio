@@ -1,0 +1,51 @@
+.containerRepository{
+    width: 90%;
+    margin: 10%;
+    color: white;
+    min-height: 900px;
+}
+hr {
+    margin: 2% 0%;
+}
+.desc {
+    text-align: justify;
+    width: 100%;
+    margin-top: 5%;
+    display: inline-block;
+}
+.desc a {
+    text-align: center;
+    width: 30%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 20px;
+    transition: 0.4s ease;
+    margin-left:36%; 
+}
+    @media (max-width: 640px){
+        .desc a {
+            width: 100%;
+            text-align: left;
+            margin-left: 0%;
+        }
+    }
+.desc a:hover {
+    color: black;
+    background-color: white;
+}
+.desc b {
+    width: 80%;
+    margin-top: 4px;
+}
+.desc a svg {
+    width: 20%;
+}
+.descRepo{
+    margin-bottom: 12px;
+    display: flex;
+}
+
