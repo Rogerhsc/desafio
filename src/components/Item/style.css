@@ -1,0 +1,29 @@
+.itemContainer {
+    width: auto;
+    max-width: 20%;
+    height: auto;
+    margin: 20px;
+    display: inline-block;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    float: left;
+    transition: all 0.4s;
+}
+.itemContainer:hover {
+    width: 23%;
+    max-width: 23%;
+}
+.interno {
+    display: block;
+    height: 100%;
+}
+.interno img{
+    width: 100%;
+}
+.interno p {
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    border-top: 1px solid white;
+    background-color: white;
+}

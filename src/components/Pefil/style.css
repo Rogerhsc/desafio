@@ -1,0 +1,56 @@
+.containerSelf {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.perfilContainer{
+    width: 90%;
+    margin: 0% 10%;
+    height: 1000px;
+    color: white;
+    display: inline-block;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+        @media (max-width: 640px){
+            .perfilContainer{
+                width: 100%;
+                margin: 0%;
+            }
+
+        }
+
+.perfilImage {
+    width: 100%;
+    margin-top: 16%;
+    border-bottom: 1px solid white;
+}
+.perfilImage p strong{
+    font-size: 30px;
+}
+.perfilImage img {
+    margin-bottom: 16px;
+    width: 260px;
+    height: 260px;
+    border: 1px solid;
+    border-radius: 100%;
+}
+.perfilImage .email {
+    color: rgba(255, 255, 255, 0.418);
+    margin-bottom: 20px;
+}
+.perfilDesc {
+    width: 100%;
+    margin-top: 16px;
+    padding:  1px;
+    height: auto;
+    text-align: center;
+}
+.perfilDesc .bio p{
+    text-align: left;
+    padding: 15px;
+}
