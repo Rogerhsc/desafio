@@ -1,0 +1,50 @@
+.containerTable{
+    width: 75%;
+    text-align: center;
+    align-self: center;
+    color: black;
+    background-color:rgb(85, 83, 83);
+    display: flex;
+    margin-top: 13px;
+    margin-left: 12%;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 8px;
+    transition: 0.4s;
+}
+.containerTable:hover{
+    background: white;
+    cursor: pointer;
+}
+.containerTable .cellStar path{
+    transition: 0.4s;
+}
+.containerTable:hover .cellStar path{   
+    color: yellow;
+}
+.numCell{
+    margin-top: 4px;
+    margin-right: 15px;
+    width: 10px;
+}
+.cellPrivate{
+    width: 10px;
+    margin-right: 15px;
+    text-align: left;
+}
+.cellName{
+    margin-top: 4px;
+    width: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.cellStar{
+    display: flex;
+    text-align: center;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.cellStar p {
+    margin-top:4px;
+}
+

@@ -8,7 +8,8 @@
 .perfilContainer{
     width: 90%;
     margin: 0% 10%;
-    height: 1000px;
+    margin-bottom: 10%;
+    height: auto;
     color: white;
     display: inline-block;
     align-self: center;
@@ -53,4 +54,26 @@
 .perfilDesc .bio p{
     text-align: left;
     padding: 15px;
+}
+.repos {
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.repos strong {
+    font-size: 25px;
+    
+}
+.reposTable {
+    text-align: center;
+    width: 100%;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+.orderTable{
+    width: 75%;
+    display: flex;
+    margin-left: 13%;
+    text-align: center;
 }

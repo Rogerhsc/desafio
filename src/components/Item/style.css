@@ -1,5 +1,5 @@
 .itemContainer {
-    width: auto;
+    width: 20%;
     max-width: 20%;
     height: auto;
     margin: 20px;
@@ -10,8 +10,7 @@
     transition: all 0.4s;
 }
 .itemContainer:hover {
-    width: 23%;
-    max-width: 23%;
+    max-width: 21%;
 }
 .interno {
     display: block;

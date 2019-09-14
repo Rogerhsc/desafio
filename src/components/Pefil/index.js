@@ -5,8 +5,10 @@
  */
 
 import React, { Component } from "react";
-import "./style.css"
-
+import "./style.css";
+import "../Table/style.css";
+import Table from './../Table/index';
+import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons/';
 export default class Perfil extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,9 @@ export default class Perfil extends Component {
       avatarImage: "",
       email: "",
       bio: "",
-      name: ""
+      name: "",
+      repositorys: [],
+      actualOrder: "",
     };
   }
   componentDidMount() {
@@ -32,33 +36,46 @@ export default class Perfil extends Component {
             avatarImage: json.avatar_url,
             email: json.email,
             bio: json.bio,
-            name: json.name
+            name: json.name,
+            numSeguidores: json.followers,
+            numSeguidos: json.following
           });
         }
-      })
-      .catch(error => {
+      }).catch(error => {
         console.log("error");
       });
-    fetch(url + "/followers", { method: "GET" })
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          numSeguidores: json.length
+
+    fetch(url + "/repos", { method: "GET" }).then(res => res.json()).then(json => {
+      this.setState({
+        repositorys: this.ordernarRepository(json, "stargazers_count"),
+        actualOrder: "stargazers_count"
+      })
+
+    });
+  }
+  ordernarRepository(array, param) {
+    debugger;
+    if (array.length != 0) {
+      if (this.state.actualOrder != param) {
+        return array.sort((x, y) => {
+          if (param == "stargazers_count") {
+            return x.stargazers_count - y.stargazers_count;
+          }else if (param == "name"){
+            return x.name - y.name;
+          }
         });
-      })
-      .catch(error => {
-        console.log("error");
-      });
-    fetch(url + "/following", { method: "GET" })
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          numSeguidos: json.length
+      } else {
+        return array.reverse((x, y) => {
+          if (param == "stargazers_count") {
+            return x.stargazers_count - y.stargazers_count;
+          }else if (param == "name"){
+            return x.name - y.name;
+          }
         });
-      })
-      .catch(error => {
-        console.log("error");
-      });
+      }
+    } else {
+      return []
+    }
   }
   render() {
     return (
@@ -78,6 +95,38 @@ export default class Perfil extends Component {
             <p>Seguidores: {this.state.numSeguidores}</p>
             <p>Seguindo: {this.state.numSeguidos}</p>
           </div>
+          <div className="repos">
+            <strong>Repositorios</strong>
+          </div>
+          <div className="reposTable">
+            <div className="orderTable">
+              <div className="numCell">#</div>
+              <div className="cellName" onClick={() => {
+                this.setState({
+                  actualOrder: "name",
+                  repositorys: this.ordernarRepository(this.state.repositorys, "name")
+                });
+              }
+              }>Nome do repositorio</div>
+              <div className="cellStar" onClick={() => {
+                this.setState({
+                  actualOrder: "stargazers_count",
+                  repositorys: this.ordernarRepository(this.state.repositorys, "stargazers_count")
+                });
+                
+              }
+              }>Estrelas</div>
+            </div>
+            {
+              this.state.repositorys.map((v, i) => {
+                return (
+                  <Table key={i} position={i} private={v.private.toString()} repoName={v.name} stars={v.stargazers_count}></Table>
+                )
+              })
+            }
+          </div>
+
+
         </div>
       </div>
     );
