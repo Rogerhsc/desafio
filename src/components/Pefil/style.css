@@ -17,13 +17,7 @@
     align-content: center;
     text-align: center;
 }
-        @media (max-width: 640px){
-            .perfilContainer{
-                width: 100%;
-                margin: 0%;
-            }
-
-        }
+        
 
 .perfilImage {
     width: 100%;
@@ -79,4 +73,15 @@
 }
 a {
     text-decoration: none;
+}
+
+@media (max-width: 640px){
+    .perfilContainer{
+        width: 100%;
+        margin: 0%;
+    }
+    .reposTable {
+        border: 0px;
+    }
+
 }

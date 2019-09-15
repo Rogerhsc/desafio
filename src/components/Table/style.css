@@ -2,7 +2,7 @@
     width: 75%;
     text-align: center;
     align-self: center;
-    color: black;
+    color: white;
     background-color:rgb(85, 83, 83);
     display: flex;
     margin-top: 13px;
@@ -11,8 +11,11 @@
     border-radius: 15px;
     padding: 8px;
     transition: 0.4s;
+    font-weight: bold;
 }
+    
 .containerTable:hover{
+    color: black;
     background: white;
     cursor: pointer;
 }
@@ -41,10 +44,18 @@
 .cellStar{
     display: flex;
     text-align: center;
-    margin-left: 30px;
+    margin-left: 10px;
     cursor: pointer;
 }
 .cellStar p {
     margin-top:4px;
+}
+
+@media (max-width: 640px){
+    .containerTable{
+        width: 95%;
+        margin-left: 0px;
+        padding: 8px;
+    }
 }
 

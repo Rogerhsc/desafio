@@ -1,6 +1,6 @@
 .homeScreen {
     width: 100%;
-    padding: 5%;
+    padding:5%;
     align-content: center;
 }
 input {
@@ -10,7 +10,7 @@ input:focus {
     outline: none;
 }
 .searchBox{
-    width: 30%;
+    width: 40%;
     height: 40px;
     border: 2px solid white;
     border-radius: 20px 0px 0px 20px;
@@ -19,6 +19,7 @@ input:focus {
     font-size: 18px;
     margin-right: 2px;
 }
+    
 .searchBox:focus{
     border-color: rgb(65, 65, 255);
 }
@@ -28,7 +29,7 @@ input:focus {
     justify-content: center;
 }
 .button{
-    width: 10%;;
+    width: 20%;
     height: 40px;
     background-color: white;
     border: 2px solid white;
@@ -36,6 +37,7 @@ input:focus {
     padding: 5px;
     text-align: center;
 }
+
 .button p{
     margin-top: 10px;
     font-weight: bold;
@@ -46,4 +48,13 @@ input:focus {
     background-color: rgb(65, 65, 255);
     color: white;
     cursor: pointer;
+}
+
+@media (max-width: 640px){
+    .searchBox{
+        width: 70%;
+    }
+    .button{
+        width: 30%;
+    }
 }
