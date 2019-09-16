@@ -57,4 +57,7 @@ input:focus {
     .button{
         width: 30%;
     }
+    .button:hover{
+        
+    }
 }
