@@ -1,3 +1,9 @@
+/**
+ *
+ *      @author Roger Henrique de Souza Conceição
+ *      @description Componente responsavel pela lista de usuarios
+ */
+
 import React, { Component } from "react";
 import "./style.css"
 export default class Item extends Component {

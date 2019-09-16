@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "npm": "4.6.1",
+    "npm": "6.11.3",
     "node": "11.11.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.4.2",
     "@material-ui/icons": "^4.4.1",
+    "eslint": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",

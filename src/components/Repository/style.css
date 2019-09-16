@@ -1,17 +1,51 @@
 .containerRepository{
-    width: 90%;
-    margin: 10%;
+    width: 100%;
     color: white;
-    min-height: 900px;
+    height: auto;
+    border-radius: 8px;
+    padding: 5%;
+    padding-top: 0%;
+    justify-content: center;
+
 }
-hr {
-    margin: 2% 0%;
+.headerRepository {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5%;
+    padding-top: 2%;
+    height: auto;
+    border-bottom: 1px solid white;
+    text-align: center;
+    margin-bottom: 2%;
 }
+.headerTextRepo {
+    font-size: 45px;
+    margin-top: 16px;
+    display: flex;
+    margin-left: 41%;
+    
+}
+.headerRepository svg{
+    float: left;
+    font-size: 85px;
+    color: rgba(255, 255, 255, 0.253);
+    transition: 0.4s;
+    cursor: pointer;
+}
+.headerRepository:hover svg{
+    float: left;
+    font-size: 85px;
+    color: rgb(255, 255, 255);
+}
+
 .desc {
     text-align: justify;
     width: 100%;
     margin-top: 5%;
     display: inline-block;
+}
+.desc h2{
+    float: left;
 }
 .desc a {
     text-align: center;
@@ -27,10 +61,22 @@ hr {
     margin-left:36%; 
 }
     @media (max-width: 640px){
+        .containerRepository{
+            width: 93%;
+            border: 0px;
+            margin: 10% 0%;
+        }
         .desc a {
-            width: 100%;
+            width: 95%;
             text-align: left;
             margin-left: 0%;
+        }
+        .headerTextRepo{
+            margin-left: 0%;
+            padding-left: 0%;
+        }
+        .headerRepository svg{
+            color: white;
         }
     }
 .desc a:hover {
@@ -47,5 +93,18 @@ hr {
 .descRepo{
     margin-bottom: 12px;
     display: flex;
+}
+.reposStars {
+    display: flex;
+    width: 10%;
+    margin-bottom: 20px;
+}
+.reposStars svg {
+    font-size: 50px;
+    text-align: center;
+    color: yellow;
+}
+.reposStars p {
+    margin-top: 18px;
 }
 

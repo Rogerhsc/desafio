@@ -1,15 +1,16 @@
 .containerSelf {
     width: 100%;
+    height: auto;
     text-align: center;
     align-items: center;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 .perfilContainer{
-    width: 90%;
+    width: 100%;
     margin: 0% 10%;
     margin-bottom: 10%;
-    height: auto;
     color: white;
     display: inline-block;
     align-self: center;
@@ -17,11 +18,10 @@
     align-content: center;
     text-align: center;
 }
-        
 
 .perfilImage {
     width: 100%;
-    margin-top: 16%;
+    margin-top: 5%;
     border-bottom: 1px solid white;
 }
 .perfilImage p strong{
@@ -62,26 +62,91 @@
 .reposTable {
     text-align: center;
     width: 100%;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 .orderTable{
-    width: 75%;
+    width: 100%;
     display: flex;
     margin-left: 13%;
     text-align: center;
 }
+.numCellPerfil{
+    width: 10px;
+}
+.cellNamePerfil{
+    width: 26%;
+    text-align: left;
+    margin-left: 15%;
+    cursor: pointer;
+    display: flex;
+}
 a {
     text-decoration: none;
 }
-
+.table {
+    height: auto;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.perfilHeader {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5%;
+    padding-top: 2%;
+    height: auto;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+.headerText {
+    font-size: 45px;
+    margin-top: 16px;
+    display: flex;
+    margin-left: 45.5%;
+    
+}
+.perfilHeader svg{
+    float: left;
+    font-size: 85px;
+    color: rgba(255, 255, 255, 0.253);
+    transition: 0.4s;
+    cursor: pointer;
+}
+.perfilHeader:hover svg{
+    float: left;
+    font-size: 85px;
+    color: rgb(255, 255, 255);
+}
 @media (max-width: 640px){
     .perfilContainer{
         width: 100%;
         margin: 0%;
+        margin-left: 2%;
+        height: 0%;
+    }
+    .orderTable{
+        margin-left: 2%;
     }
     .reposTable {
         border: 0px;
+    }
+    .cellNamePerfil{
+        width: 35%;
+        text-align: left;
+        margin-left: 25%;
+        margin-right: 0%;
+    }
+    .numCellPerfil{
+        margin-left: 1%;
+    }
+    .table {
+        margin-left: 1%;
+    }
+    .headerText{
+        margin-left: 38%;
+    }
+    .perfilHeader svg {
+        color: white;
     }
 
 }

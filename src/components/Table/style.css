@@ -44,7 +44,7 @@
 .cellStar{
     display: flex;
     text-align: center;
-    margin-left: 10px;
+    margin-left: 15px;
     cursor: pointer;
 }
 .cellStar p {

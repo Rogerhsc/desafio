@@ -1,12 +1,13 @@
 /**
  *
  *      @author Roger Henrique de Souza Conceição
- *      @description tela principal
+ *      @description tela de Busca
  */
 import React, { Component } from "react";
 import "./style.css"
 import { Link } from "react-router-dom";
 import Item from "../Item";
+import Header from './../Header/index';
 
 export default class HomeScreen extends Component {
   searchUsers(loginUser) {
@@ -32,6 +33,9 @@ export default class HomeScreen extends Component {
         });
     }
   }
+  keyPress(e) {
+
+  }
 
   constructor(props) {
     super(props);
@@ -49,11 +53,17 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <div className="homeScreen">
+      <Header></Header>
         <div className="textButton">
           <input
             type="text"
             name="user"
             className="searchBox"
+            onKeyDown={e => {
+              if(e.key == "Enter"){
+                this.searchUsers(this.state.textValue)
+              }
+            }}
             onChange={e => {
               this.setState({ textValue: e.target.value });
             }}

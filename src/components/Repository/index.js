@@ -1,6 +1,13 @@
+/**
+ *
+ *      @author Roger Henrique de Souza Conceição
+ *      @description View repositorio
+ */
+
 import React, { Component } from 'react'
 import "./style.css"
-import { Star, DoubleArrow } from '@material-ui/icons';
+import { Star, DoubleArrow, KeyboardArrowLeft } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 export default class Repository extends Component {
     constructor(props) {
         super(props)
@@ -17,30 +24,45 @@ export default class Repository extends Component {
                 })
             })
     }
+    formataData(data) {
+        if (data.toString().indexOf("T") > -1) {
+            var onlyDate = data.split("T");
+            onlyDate = onlyDate[0].split("-")
+
+            return onlyDate[2] + "/" + onlyDate[1] + "/" + onlyDate[0];
+        };
+    }
     render() {
+        const repos = this.state.repository
         return (
             <div className="containerRepository">
-                <h1>Repositorio</h1>
-                <hr></hr>
+                <div className="headerRepository">
+                    <Link to={`/perfil/${this.props.match.params.loginUser}`}>
+                        <KeyboardArrowLeft></KeyboardArrowLeft>
+                    </Link>
+                    <div className="headerTextRepo">
+                        <b>Repositório</b>
+                    </div>
+                </div>
                 <h2>{this.props.match.params.reposName}</h2>
+
+                <div className="reposStars">
+                    <Star></Star><p>{repos.stargazers_count}</p>
+                </div>
                 <div className="desc">
                     <div className="descRepo">
-                        <p>{this.state.repository.description == null ? "Não possui descrição" : this.state.repository.description}</p>
+                        <p>{repos.description == null ? "Não possui descrição" : repos.description}</p>
                     </div>
-                    <div clasName="reposStars">
-                        <p><Star></Star>{this.state.repository.stargazers_count}</p>
-                    </div>
+                    <p>Criado em: {this.formataData(String(repos.created_at))}</p>
                     <div>
-                        <p>Linguagem: {this.state.repository.language}
-                            <div>
-                            </div>
+                        <p>Linguagem: {repos.language}
                         </p>
                     </div>
                     <div className="linkRepository">
-                        <p><a href={this.state.repository.html_url} target="_blank"><b>Acesse o repositorio</b> <DoubleArrow></DoubleArrow></a></p>
+                        <p><a href={repos.html_url} target="_blank"><b>Acesse o repositorio</b> <DoubleArrow></DoubleArrow></a></p>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
